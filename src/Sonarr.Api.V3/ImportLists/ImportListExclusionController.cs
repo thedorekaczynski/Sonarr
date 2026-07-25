@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
+using NzbDrone.Common.Extensions;
 using NzbDrone.Core.Datastore;
 using NzbDrone.Core.ImportLists.Exclusions;
 using Sonarr.Http;
@@ -81,6 +82,35 @@ namespace Sonarr.Api.V3.ImportLists
         public void DeleteImportListExclusion(int id)
         {
             _importListExclusionService.Delete(id);
+        }
+
+        // Shared validation rejects the whole batch as soon as one series is already excluded,
+        // so it is skipped here and each item is validated individually instead.
+        [HttpPost("bulk")]
+        [SkipValidation(true, true)]
+        [Consumes("application/json")]
+        [Produces("application/json")]
+        public object AddImportListExclusions([FromBody] List<ImportListExclusionResource> resources)
+        {
+            var added = new List<ImportListExclusionResource>();
+
+            foreach (var resource in resources)
+            {
+                if (resource.TvdbId <= 0 || resource.Title.IsNullOrWhiteSpace())
+                {
+                    continue;
+                }
+
+                // Skip anything already excluded rather than failing the whole batch.
+                if (_importListExclusionService.FindByTvdbId(resource.TvdbId) != null)
+                {
+                    continue;
+                }
+
+                added.Add(_importListExclusionService.Add(resource.ToModel()).ToResource());
+            }
+
+            return added;
         }
 
         [HttpDelete("bulk")]

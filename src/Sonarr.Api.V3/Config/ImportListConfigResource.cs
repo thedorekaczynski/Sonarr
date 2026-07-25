@@ -8,6 +8,7 @@ namespace Sonarr.Api.V3.Config
     {
         public ListSyncLevelType ListSyncLevel { get; set; }
         public int ListSyncTag { get; set; }
+        public string TmdbApiKey { get; set; }
     }
 
     public static class ImportListConfigResourceMapper
@@ -18,6 +19,7 @@ namespace Sonarr.Api.V3.Config
             {
                 ListSyncLevel = model.ListSyncLevel,
                 ListSyncTag = model.ListSyncTag,
+                TmdbApiKey = model.TmdbApiKey,
             };
         }
     }

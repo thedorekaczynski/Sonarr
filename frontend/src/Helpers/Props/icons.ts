@@ -24,6 +24,7 @@ import {
 import {
   faArrowCircleLeft as fasArrowCircleLeft,
   faArrowCircleRight as fasArrowCircleRight,
+  faArrowTrendUp as fasArrowTrendUp,
   faAsterisk as fasAsterisk,
   faBackward as fasBackward,
   faBars as fasBars,
@@ -62,7 +63,9 @@ import {
   faFileCircleQuestion as fasFileCircleQuestion,
   faFileExport as fasFileExport,
   faFileInvoice as farFileInvoice,
+  faFilm as fasFilm,
   faFilter as fasFilter,
+  faFire as fasFire,
   faFlag as fasFlag,
   faFolderOpen as fasFolderOpen,
   faFolderTree as farFolderTree,
@@ -104,6 +107,7 @@ import {
   faTh as fasTh,
   faTheaterMasks as fasTheaterMasks,
   faThList as fasThList,
+  faThumbsUp as fasThumbsUp,
   faTimes as fasTimes,
   faTimesCircle as fasTimesCircle,
   faTrashAlt as fasTrashAlt,
@@ -181,6 +185,10 @@ export const MEDIA_INFO = farFileInvoice;
 export const MISSING = fasExclamationTriangle;
 export const MONITORED = fasBookmark;
 export const NETWORK = fasBroadcastTower;
+export const FILM = fasFilm;
+export const POPULAR = fasFire;
+export const RECOMMENDED = fasThumbsUp;
+export const TRENDING = fasArrowTrendUp;
 export const NAVBAR_COLLAPSE = fasBars;
 export const NOT_AIRED = farClock;
 export const ORGANIZE = fasSitemap;

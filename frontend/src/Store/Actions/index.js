@@ -5,6 +5,7 @@ import * as calendar from './calendarActions';
 import * as captcha from './captchaActions';
 import * as commands from './commandActions';
 import * as customFilters from './customFilterActions';
+import * as discoverSeries from './discoverSeriesActions';
 import * as episodes from './episodeActions';
 import * as episodeFiles from './episodeFileActions';
 import * as episodeHistory from './episodeHistoryActions';
@@ -36,6 +37,7 @@ export default [
   captcha,
   commands,
   customFilters,
+  discoverSeries,
   episodes,
   episodeFiles,
   episodeHistory,

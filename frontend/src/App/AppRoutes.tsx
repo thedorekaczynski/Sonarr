@@ -8,6 +8,7 @@ import ImportSeries from 'AddSeries/ImportSeries/ImportSeries';
 import CalendarPage from 'Calendar/CalendarPage';
 import NotFound from 'Components/NotFound';
 import Switch from 'Components/Router/Switch';
+import DiscoverSeriesConnector from 'DiscoverSeries/DiscoverSeriesConnector';
 import SeriesDetailsPageConnector from 'Series/Details/SeriesDetailsPageConnector';
 import SeriesIndex from 'Series/Index/SeriesIndex';
 import CustomFormatSettingsPage from 'Settings/CustomFormats/CustomFormatSettingsPage';
@@ -61,6 +62,8 @@ function AppRoutes() {
       <Route path="/add/new" component={AddNewSeriesConnector} />
 
       <Route path="/add/import" component={ImportSeries} />
+
+      <Route path="/add/discover" component={DiscoverSeriesConnector} />
 
       <Route path="/serieseditor" exact={true} render={RedirectWithUrlBase} />
 

@@ -30,6 +30,10 @@ const links = [
         to: '/add/new'
       },
       {
+        title: () => translate('Discover'),
+        to: '/add/discover'
+      },
+      {
         title: () => translate('LibraryImport'),
         to: '/add/import'
       }

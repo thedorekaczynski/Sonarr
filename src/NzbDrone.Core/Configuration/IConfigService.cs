@@ -55,6 +55,7 @@ namespace NzbDrone.Core.Configuration
 
         ListSyncLevelType ListSyncLevel { get; set; }
         int ListSyncTag { get; set; }
+        string TmdbApiKey { get; set; }
 
         // UI
         int FirstDayOfWeek { get; set; }
